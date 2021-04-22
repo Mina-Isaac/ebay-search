@@ -8,7 +8,6 @@ export interface QueryParams {
 }
 
 export function generateSearchURL(queryParams: QueryParams) {
-
   // This IIFE is used to keep track of the number of times a query filter has been used
   // Its return value increases by one every 2 calls
   const getFilterCount = (function () {
@@ -18,7 +17,7 @@ export function generateSearchURL(queryParams: QueryParams) {
     };
   })();
 
-  const {keywords, maxPrice, minPrice, pageNumber} = queryParams
+  const { keywords, maxPrice, minPrice, pageNumber } = queryParams;
 
   const minPriceFilter =
     minPrice !== null

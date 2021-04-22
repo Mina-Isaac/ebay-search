@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss"
+import "./style.scss";
 import search from "../../images/search.png";
 import { searchProducts, selectSearchStatus } from "../../store/dataSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -19,7 +19,6 @@ function SearchBar() {
   const dispatch = useAppDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
     dispatch(setKeywords(e.target.value));
   };
 

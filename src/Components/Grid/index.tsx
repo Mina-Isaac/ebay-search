@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import "./style.scss"
+import "./style.scss";
 import {
   loadMoreData,
   selectList,

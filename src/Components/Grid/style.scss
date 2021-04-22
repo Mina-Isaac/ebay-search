@@ -1,12 +1,13 @@
+$spacing--xl: 23px;
+$spacing--m: 10px;
+
 .infinite-scroll-component {
-  --spacing--xl: 23px;
-  --spacing--m: 10px;
   flex: 1 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  grid-gap: var(--spacing--xl);
-  gap: var(--spacing--xl);
-  margin: var(--spacing--m) 0 var(--spacing--xl) 0;
+  grid-gap: $spacing--xl;
+  gap: $spacing--xl;
+  margin: $spacing--m 0 $spacing--xl 0;
   overflow-y: auto;
   max-height: 70%;
 }

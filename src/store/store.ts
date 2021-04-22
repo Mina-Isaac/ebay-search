@@ -1,13 +1,13 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import initialDataFetchReducer from './dataSlice';
-import settingsReducer from './settingsSlice'
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import initialDataFetchReducer from "./dataSlice";
+import settingsReducer from "./settingsSlice";
 
 export const store = configureStore({
   reducer: {
     data: initialDataFetchReducer,
-    settings: settingsReducer
+    settings: settingsReducer,
   },
-  devTools: process.env.NODE_ENV === "development"
+  devTools: process.env.NODE_ENV === "development",
 });
 
 export type AppDispatch = typeof store.dispatch;

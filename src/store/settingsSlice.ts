@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 
- interface SettingsState {
+interface SettingsState {
   minPrice: number | null;
   maxPrice: number | null;
   keywords: string;
@@ -10,13 +10,11 @@ import { RootState } from './store';
 const initialState: SettingsState = {
   minPrice: null,
   maxPrice: null,
-  keywords: ""
+  keywords: "",
 };
 
-
-
- const settingsSlice = createSlice({
-  name: 'settings',
+const settingsSlice = createSlice({
+  name: "settings",
   initialState,
   reducers: {
     setMinPrice: (state, action: PayloadAction<number | null>) => {
@@ -25,17 +23,16 @@ const initialState: SettingsState = {
     setMaxPrice: (state, action: PayloadAction<number | null>) => {
       state.maxPrice = action.payload;
     },
-    setKeywords: (state, action: PayloadAction<string>)=> {
-      state.keywords = action.payload
-    }
+    setKeywords: (state, action: PayloadAction<string>) => {
+      state.keywords = action.payload;
+    },
   },
 });
 
 export const { setMinPrice, setMaxPrice, setKeywords } = settingsSlice.actions;
 
-export const selectMinPrice = (state: RootState) => state.settings.minPrice
+export const selectMinPrice = (state: RootState) => state.settings.minPrice;
 export const selectMaxPrice = (state: RootState) => state.settings.maxPrice;
 export const selectKeywords = (state: RootState) => state.settings.keywords;
-
 
 export default settingsSlice.reducer;

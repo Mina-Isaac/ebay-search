@@ -1,10 +1,13 @@
-import { createAsyncThunk, createReducer, SerializedError } from "@reduxjs/toolkit";
+import {
+  createAsyncThunk,
+  createReducer,
+  SerializedError,
+} from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { Item, ResponseAPI } from "./types";
 import service from "../services";
 
-
-const noMatchErr = "No items matching your search"
+const noMatchErr = "No items matching your search";
 
 export interface DataState {
   results: ResponseAPI | undefined;
@@ -68,9 +71,11 @@ const dataReducer = createReducer(initialState, (builder) => {
       state.searchStatus = "succeeded";
       state.error = undefined;
       state.results = action.payload;
-      const items = state.results?.findItemsByKeywordsResponse[0].searchResult?.[0].item || []
+      const items =
+        state.results?.findItemsByKeywordsResponse[0].searchResult?.[0].item ||
+        [];
       state.list = items;
-        if(items.length === 0) state.error = noMatchErr
+      if (items.length === 0) state.error = noMatchErr;
     })
     .addCase(searchProducts.rejected, (state, action) => {
       state.searchStatus = "failed";
