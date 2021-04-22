@@ -66,10 +66,10 @@ const dataReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(searchProducts.pending, (state) => {
       state.searchStatus = "loading";
+      state.error = undefined;
     })
     .addCase(searchProducts.fulfilled, (state, action) => {
       state.searchStatus = "succeeded";
-      state.error = undefined;
       state.results = action.payload;
       const items =
         state.results?.findItemsByKeywordsResponse[0].searchResult?.[0].item ||
